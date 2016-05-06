@@ -9,15 +9,15 @@ import java.util.function.Consumer;
 public class ConsumerAndForEach {
     public static void main(String[] args) {
         List<String> newList = Arrays.asList("first", "second", "third");
-        Consumer consumerAux = null;
+        Consumer consumerAux = new ListConsumer();
 
         newList.forEach(consumerAux);
     }
-    class listConsumer implements Consumer<String>{
-        @Override
-        public void accept(String o) {
-            System.out.println(o);
-        }
+}
+class ListConsumer implements Consumer<String>{
+    @Override
+    public void accept(String o) {
+        System.out.println(o);
     }
 }
 
